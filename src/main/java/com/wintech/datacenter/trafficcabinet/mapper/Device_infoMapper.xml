@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.wintech.datacenter.trafficcabinet.mapper.Device_infoMapper">
+ 
+ 	<select id="getPageDevice" resultType="device_info"> 
+ 		select * from device_info where 1=1
+ 		<if test="deviceId!=''">
+ 			and deviceId=#{deviceId}
+ 		</if>
+ 		limit #{rowNum},#{pageCount}
+ 	</select>
+ 	<!-- 总条数 -->
+ 	<select id="totalCount" resultType="int">
+ 		select count(deviceId) from device_info where 1=1
+ 		<if test="deviceId!=''">
+ 			and deviceId=#{deviceId}  
+ 		</if>
+ 	</select>
+ 	
+ 	
+ 	<update id="updateDevice" parameterType="com.wintech.datacenter.trafficcabinet.pojo.Device_info">
+ 		update device_info
+ 		<set>
+ 			<if test=" devicestate!=null and devicestate!='' ">
+ 				devicestate = #{devicestate}
+ 			</if>
+ 			<if test=" devicename!=null and devicename!='' ">
+ 				devicename = #{devicename}
+ 			</if>
+ 			<if test=" registstate!=null and registstate!='' ">
+ 				registstate = #{registstate}
+ 			</if>
+ 			<if test=" tempnow!=null and tempnow!='' ">
+ 				tempnow = #{tempnow}
+ 			</if>
+ 			<if test=" tempmax!=null and tempmax!='' ">
+ 				tempmax = #{tempmax}
+ 			</if>
+ 			<if test=" tempmin!=null and tempmin!='' ">
+ 				tempmin = #{tempmin}
+ 			</if>
+ 			<if test=" wetnow!=null and wetnow!='' ">
+ 				wetnow = #{wetnow}
+ 			</if>
+ 			<if test=" wetmax!=null and wetmax!='' ">
+ 				wetmax = #{wetmax}
+ 			</if>
+ 			<if test=" wetmin!=null and wetmin!='' ">
+ 				wetmin = #{wetmin}
+ 			</if>
+ 			<if test=" lat!=null and lat!='' ">
+ 				lat = #{lat}
+ 			</if>
+ 			<if test=" lng!=null and lng!='' ">
+ 				lng = #{lng}
+ 			</if>
+ 			<if test=" shake!=null and shake!='' ">
+ 				shake = #{shake}
+ 			</if>
+ 			<if test=" deviceip!=null and deviceip!='' ">
+ 				deviceip = #{deviceip}
+ 			</if>
+ 			<if test=" serverip!=null and serverip!='' ">
+ 				serverip = #{serverip}
+ 			</if>
+ 			<if test=" geteway!=null and geteway!='' ">
+ 				geteway = #{geteway}
+ 			</if>
+ 			<if test=" snm!=null and snm!='' ">
+ 				snm = #{snm}
+ 			</if>
+ 			<if test=" serverport!=null and serverport!='' ">
+ 				serverport = #{serverport}
+ 			</if>
+ 			<if test=" deviceport!=null and deviceport!='' ">
+ 				deviceport = #{deviceport}
+ 			</if>
+ 			<if test=" reporttime!=null and reporttime!='' ">
+ 				reporttime = #{reporttime}
+ 			</if>
+ 			<if test=" hearttime!=null and hearttime!='' ">
+ 				hearttime = #{hearttime}
+ 			</if>
+ 		</set>
+ 		where deviceId = #{deviceId}
+ 	</update>
+ 	
+ 	<select id="getDevice_info" parameterType="String"  resultType="com.wintech.datacenter.trafficcabinet.pojo.Device_info">
+ 		select * from device_info where deviceId = #{deviceId}
+ 	</select>
+ </mapper>

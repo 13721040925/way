@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.wintech.datacenter.trafficcabinet.mapper.LogMapper">
+ 	
+ 	<select id="getAllPageLog" resultType="useractionlog">    
+ 		select * from useractionlog where 1=1
+ 		<if test="userid!=''">
+ 			and userid=#{userid}  
+ 		</if>  
+ 		<if test="timemin!=''and timemax!=''">
+ 			and time &gt; #{timemin} and time &lt; #{timemax}
+ 		</if> 
+ 		<if test="timemin==''and timemax!=''">   
+ 			and time &lt; #{timemax} 
+ 		</if>
+ 		<if test="timemin!=''and timemax==''">
+ 			and time &gt; #{timemin}  
+ 		</if> 
+ 		limit #{rowNum},#{pagecount}  
+ 	</select>
+ 	<!-- 总条数 -->
+ 	<!-- <select id="totalCount" resultType="int">
+ 		select count(id) from useractionlog where 1=1
+ 		<if test="userid!=''">
+ 			and userid=#{userid}     
+ 		</if>
+ 	</select> -->
+ </mapper> 

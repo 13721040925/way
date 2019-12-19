@@ -1,0 +1,60 @@
+.btn-group{
+		margin-top:3.8%;
+		margin-left:30%;
+	}
+	#logout{
+		margin-top:3.8%; 
+		margin-left:15%;
+		width:5.5%;
+	}
+	label{
+		width:110px;
+	}
+	.btn{
+		font-size: 16px;
+		font-family: "Î¢ÈíÑÅºÚ";
+	}
+	.box{
+		border:1px solid #BEBEBE;
+		width:70%;
+		height:800px;
+		margin-left:15%;
+		margin-top:-2.1%;
+		border-top:none;
+		border-bottom: none;
+	}
+	.box1{
+		border:1px solid #F0F0F0;
+		border-left:none;
+		border-right:none; 
+	}
+	h1,h2{
+		color:#003D79;
+		margin-left:2%;
+		margin-top:4%;
+	}
+	.form-inline{
+		margin-left:5%;   
+		margin-top:1.5%; 
+	}
+	#wendu{
+		width:55%;
+	}
+	#wendu1{
+		width:48%;
+	}
+	.sp{
+		color:red;
+		font-size:15px;
+	}
+	.last{
+		text-align:center;
+		margin-top:3.2%;
+	} 
+	#span,#span21,#span19,#span20,#span17,#span15,#span13,#span11,#span9{ 
+	  	position: absolute;  
+	  	margin-top:0.4%; 
+	}
+	.navbar{
+		background-color: #214761;
+	}

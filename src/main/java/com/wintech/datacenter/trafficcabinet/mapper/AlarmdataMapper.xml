@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="cn.mapper.AlarmdataMapper">
+ 
+ 	<select id="gePageAlarmdata" resultType="alarmdata">
+ 		select * from alarmdata where 1=1
+ 		<if test="deviceid!=''">
+ 			and deviceid=#{deviceid}
+ 		</if>
+ 		<if test="timemin!=''and timemax!=''">
+ 			and alarmtime &gt; #{timemin} and alarmtime &lt; #{timemax} 
+ 		</if> 
+ 		<if test="timemin==''and timemax!=''">   
+ 			and alarmtime &lt; #{timemax} 
+ 		</if>
+ 		<if test="timemin!=''and timemax==''"> 
+ 			and alarmtime &gt; #{timemin}  
+ 		</if> 
+ 		limit #{rowNum},#{pagecount}  
+ 	</select> 
+ </mapper>

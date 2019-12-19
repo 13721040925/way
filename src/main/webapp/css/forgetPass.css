@@ -1,0 +1,33 @@
+		#title{   
+	    	font-size:35px;          
+	    	color:#750000;
+	    	margin-left:5%;
+	    }
+	    label{
+	    	font-size:18px;
+	    	width:100px;
+	    	padding:6px;
+	    }
+		button{
+	    	width:85px;
+	    }  
+	    #all{ 
+			margin-top:15%;
+			margin-right:5%;  
+			text-align:center;   
+		}
+		.box{
+ 			margin-left:107px; 
+ 		    text-align: center;
+		}
+		#sp,#sp1,#sp2{
+			position: absolute;
+			margin-right:26%; 
+		}
+		.form-control-feedback {/* 自定义反馈红叉的位置 */ 
+		  top: 0;
+		  right: -30px; 
+		}
+		#tip1{
+			margin-left:4%; 
+		}
